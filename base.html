@@ -2,12 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')  }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+<!--We have a CSS file, but our HTML documents still don’t know how to link to it.
+The idea is we should link each page to the CSS. So, open your base.html page and add a head section-->
+
+
     {% block head %}{% endblock %}
 </head>
 <body>
     {% block body %}{% endblock %}
-
-
 </body>
 </html>
+
+<!-- An HTML document must start with a declaration that specifies the document type: <!DOCTYPE html>.-->
+<!--The HTML document itself always begins with <html> and ends with </html>.-->
+<!--The visible part of the HTML document is between <body> and </body>.
+<!--The area outside of that is used to reference Javascript files, CSS, or other features.-->
