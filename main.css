@@ -1,4 +1,51 @@
-body {
-margin: 30%;
-font-family: Times roman;
+body, html {
+    margin: 0;
+    font-family: sans-serif;
 }
+
+.content {
+    margin: 0 auto;
+    width: 400px;
+}
+
+table, td, th {
+    border: 1px solid #aaa;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th {
+    height: 30px;
+}
+
+td {
+    text-align: center;
+    padding: 5px;
+}
+
+.form {
+    margin-top: 20px;
+}
+
+#content {
+    width: 70%;
+}
+
+/*We need to add some style formatting to the HTML structure using CSS (Cascading Style Sheets).
+ That is done by creating a CSS file and connecting it to our HTML files.
+ CSS is a style language that likewise HTML it is also very easy to learn.
+ Remember that HTML template files HTML go inside the templates folder.
+ CSS stylesheets are considered static files. There is no interaction with their code, like there is with HTML templates.
+ Therefore, flask has reserved a separate folder where you should put static files such as CSS, Javascript, images or other files.
+ That folder should be created by you and should be named static.
+ It’s also good practice to create another folder inside static and name it css.
+ What the code is basically doing is referring to the HTML tags and div class names and-
+ -applying fonts, colors, text size, padding, margins and background colors to those HTML elements.
+
+
+
+
+ */
