@@ -1,11 +1,48 @@
-{% extends 'base.html'%}
+{% extends 'base.html' %}
+<!-- EXTENDING THE INDEX.HTML FILE TO BASE.HTML-->
 
 {% block head %}
 
+<title>Mohan's Website</title>
+<!-- THIS IS THE HEADER-->
+
 {% endblock %}
 
+
+<!-- BELOW IS THE MAIN BODY-->
 {% block body %}
-<h1>Happy birthday!</h1>
+<div class="content">
+    <h1 style="text-align: center">Task Master</h1>
+    <!-- IF TASKS ARE ZERO, THEN BELOW CODE IS EXECUTED-->
+    {% if tasks|length < 1 %}
+    <h4 style="text-align: center">There are no tasks. Create one below!</h4>
+    {% else %}
+    <table>
+        <tr>
+            <th>Task</th>         <!-- TABLE CREATION-->
+            <th>Added</th>
+            <th>Actions</th>
+        </tr>
+        {% for task in tasks %}   <!-- For looping all tasks in tasks -->
+            <tr>
+                <td>{{ task.content }}</td>                  <!-- Display Task content-->
+                <td>{{ task.date_created.date() }}</td>      <!-- Display Date created-->
+                <td>
+                    <a href="/delete/{{task.id}}">Delete</a>
+                    <br>
+                    <a href="/update/{{task.id}}">Update</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
 
-
+<!-- BELOW IS THE FORM -->
+    <div class="form">
+        <form action="/" method="POST">
+            <input type="text" name="content" id="content"> <!-- TEXT FIELD-->
+            <input type="submit" value="Add Task"> <!-- ADD TASK BUTTON-->
+        </form>
+    </div>
+</div>
 {% endblock %}
